@@ -27,7 +27,8 @@
       "build:ormconfig": "copyfiles -f ormconfig.js  src/",
       "watch": "tsc -w",
       "dev": "nodemon src/index.js",
-      "typeorm": "npx typeorm-ts-node-commonjs" ,
-      "generate-migrations": "yarn run typeorm migration:generate --dataSource src/config/typeorm/data-source.ts src/migrations/AutoGenerate"
+      "typeorm": "npx typeorm-ts-node-commonjs",
+      "generate-migrations": "yarn run typeorm migration:generate --dataSource src/config/typeorm/data-source.ts src/migrations/AutoGenerate",
+      "run-migrations": "yarn run typeorm migration:run --dataSource src/config/typeorm/data-source.ts"
    }
 }
