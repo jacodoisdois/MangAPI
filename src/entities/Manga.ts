@@ -1,16 +1,16 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
-import { Volume } from "./Volume"
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm'
+import { Volume } from './Volume'
 
 @Entity()
 export class Manga {
-    @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn()
     id!: number
 
-    @Column()
+  @Column()
     name!: string
-    
-    @OneToMany(() => Volume, (volume) => volume.manga, {
-        nullable: true
-    })
+
+  @OneToMany(() => Volume, (volume) => volume.manga, {
+    nullable: true
+  })
     volumes: Volume[]
 }

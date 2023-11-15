@@ -1,17 +1,18 @@
 import { type Cheerio, type AnyNode } from 'cheerio'
-import { type IAttributeSelector, type IGenericProduct } from '../types/types'
-import { type IExtractionStrategy } from './interfaces/IExtractionStrategy'
+import { type GenericProduct, type IAttributeSelector } from '../../types/types'
+import { type IDataSource } from '../../interfaces/IDataSource'
+import { type IGenericProduct } from '../../interfaces/IGenericProduct'
 
 export class Product implements IGenericProduct {
-  rawPrice: number
-  discountPrice: number
-  discountPercentual: number
-  title: string
-  description: string
-  thereIsDiscount: boolean
-  dataSource: IExtractionStrategy
+  dataSource: IDataSource
+  selectors: IAttributeSelector[]
+  searchRegex: RegExp
 
-  getFormatedProductData (productPageHtml: string): IGenericProduct {
+  constructor (dataSource: IDataSource) {
+    this.dataSource = dataSource
+  }
+
+  getFormatedProductData (productPageHtml: string): GenericProduct {
     return {
       rawPrice: 0,
       discountPrice: 0,

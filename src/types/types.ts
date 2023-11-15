@@ -1,17 +1,5 @@
-export interface IGenericProduct {
-  rawPrice: number
-  discountPrice: number
-  discountPercentual: number
-  title: string
-  description: string
-  thereIsDiscount: boolean
-}
-
-export type MangaProduct = IGenericProduct & {
-  volume: number
-  name: string
-  language: string
-}
+import { type IGenericProduct } from '../interfaces/IGenericProduct'
+import { type IMangaProduct } from '../interfaces/IMangaProduct'
 
 export interface IAttributeSelector {
   name: string
@@ -20,6 +8,15 @@ export interface IAttributeSelector {
   slice?: number
 }
 
-export type ProductTypes = IGenericProduct
+export interface GenericProduct {
+  rawPrice: number
+  discountPrice: number
+  discountPercentual: number
+  title: string
+  description: string
+  thereIsDiscount: boolean
+}
+
+export type ProductTypes = IGenericProduct | IMangaProduct
 
 export type HTTPMethods = 'get' | 'post'
