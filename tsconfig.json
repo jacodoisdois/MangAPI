@@ -13,5 +13,9 @@
       "sourceMap": true,
       "resolveJsonModule": true,
       "esModuleInterop": true,
-   }
+      "strict": true,
+      "strictPropertyInitialization": false,
+      "useUnknownInCatchVariables": false
+   },
+   "include": [".eslintrc.js", "src/**/*"]
 }

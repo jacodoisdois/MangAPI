@@ -1,29 +1,29 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
-import { Manga } from "./Manga"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm'
+import { Manga } from './Manga'
 
 @Entity()
 export class Volume {
-    @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn()
     id!: number
 
-    @Column()
+  @Column()
     number: number
 
-    @Column()
+  @Column()
     language: string
 
-    @Column()
+  @Column()
     price_discounted: number
-    
-    @Column()
+
+  @Column()
     current_price: number
 
-    @Column()
+  @Column()
     thereIsDiscount: boolean
 
-    @Column()
+  @Column()
     discountPercentual: number
 
-    @ManyToOne(() => Manga, (manga) => manga.volumes)
+  @ManyToOne(() => Manga, (manga) => manga.volumes)
     manga: Manga
 }
